@@ -1,0 +1,1022 @@
+\newcommand{\DISS}{\textsf{DISS}}
+\newcommand{\median}{\texttt{median}}
+\newcommand{\clust}{\textsf{clust}}
+\newcommand{\Paths}{\textsf{Paths}}
+\newcommand{\gini}{\textsf{gini}}
+\newcommand{\leqs}{\leqslant}
+\newcommand{\geqs}{\geqslant}
+\newcommand{\GF}{\textsf{GF}}
+\newcommand{\parts}{\textsf{PART}}
+\newcommand{\dLevel}{\textsf{dLevel}}
+\newcommand{\Child}{\textsf{Child}}
+\newcommand{\view}{\textsf{view}}
+\newcommand{\PF}{\textsf{PF}}
+\newcommand{\DS}{\textsf{DS}}
+\newcommand{\MDS}{\textsf{MDS}}
+\newcommand{\bd}[1]{\partial_{#1}}
+\newcommand{\pbd}[1]{\partial^{+}_{#1}}
+\newcommand{\nbd}[1]{\partial^{-}_{#1}}
+\newcommand{\uap}[1]{\textsf{uap}_{#1}}
+\newcommand{\lap}[1]{\textsf{lap}_{#1}}
+\newcommand{\items}{\textsf{items}}
+\newcommand{\tids}{\textsf{tids}}
+\newcommand{\SPAG}{\textbf{SPAG}}
+\newenvironment{eroman}{
+\begin{enumerate}%
+% enumeration in small, roman numerals, not italicized
+\def\labelenumi{{\rm (}\theenumi\/{\rm )}}%
+\def\theenumi{\rm\roman{enumi}}%
+}{\end{enumerate}}
+\newcommand{\ibv}{\textit{ibv}}
+\newcommand{\rbv}{\textit{rbv}}
+\newcommand{\bfy}{\textbf{y}}
+\newcommand{\bfk}{\textbf{k}}
+\newcommand{\bfn}{\textbf{n}}
+\newcommand{\bfo}{\textbf{o}}
+\newcommand{\bfc}{\textbf{c}}
+\newcommand{\bfF}{\textbf{F}}
+
+\newcommand{\AIC}{\textsf{AIC}}
+\newcommand{\BIC}{\textsf{BIC}}
+\newcommand{\TP}{\textsf{TP}}
+\newcommand{\FP}{\textsf{FP}}
+\newcommand{\TN}{\textsf{TN}}
+\newcommand{\FN}{\textsf{FN}}
+\newcommand{\CM}{\textsf{CM}}
+\newcommand{\PP}{\textsf{PP}}
+\newcommand{\PN}{\textsf{PN}}
+\newcommand{\POS}{\textsf{POS}}
+\newcommand{\NEG}{\textsf{NEG}}
+\newcommand{\ac}{\textsf{acc}}
+\newcommand{\pr}{\textsf{prec}}
+\newcommand{\tpr}{\textsf{tpr}}
+
+\newcommand{\nfx}{\lhd}
+\newcommand{\NEC}{{\textsf{NEC}}}
+\newcommand{\diam}{{\textsf{diam}}}
+\newcommand{\suppcount}{\textsf{suppcount}}
+\newcommand{\supp}{{\textsf{supp}}}
+\newcommand{\adom}{\textsf{adom}}
+\newcommand{\pa}{\textsf par}
+\newcommand{\an}{\textsf anc}
+\newcommand{\var}{\operatorname{Var}}
+\newcommand{\gain}{{\mathsf{gain}}}
+\newcommand{\gainratio}{{\mathsf{gainratio}}}
+%\newcommand{\conf}{{\mathrm{conf}}}
+\newcommand{\sse}{{\mathsf{sse}}}
+\newcommand{\sset}{{\mathrm{sset}}}
+\newcommand{\sseq}{{\textsf{sseq}}}
+\newcommand{\minsupp}{\textsf{minsupp}}
+\newcommand{\minconf}{\textsf{minconf}}
+\newcommand{\str}[1]{\rule{0mm}{#1}}
+
+\newcommand{\act}{{\mathrm{act}}}
+\newcommand{\pas}{{\mathrm{pass}}}
+
+\newcommand{\alginput}{\ \\*\noindent{\bf Input: }}
+\newlength{\alginputlength}
+\settowidth{\alginputlength}{Input: }
+\newcommand{\algoutput}{\ \\*\noindent{\bf Output: }}
+
+%\newcommand{\beliefs}{{\cal B}}
+\newcommand{\beliefs}{{\cal C}}
+\newcommand{\att}{{\mathrm{Attr}}} % attributes used in beliefs
+
+% define so that it is easy to change
+\newcommand{\divrg}[2]{{D(#1,#2)}} %distribution divergence
+\newcommand{\divrgsub}[3]{{D_{#1}(#2:#3)}} %distribution divergence with subscript
+\newcommand{\divrgsymb}{D} %distribution divergence (just the symbol)
+
+\newcommand{\Inter}{{\mathcal{I}}}
+%\newcommand{\proof}{\textbf{Proof. }}
+
+\newcommand{\estprb}{{{\hat{P}}}}
+\newcommand{\vect}[1]{{\bf #1}}
+\newcommand{\domA}{{\dom(\vect{A})}}
+\newcommand{\attrs}{H}
+\newcommand{\vB}{{\vect{B}}}
+\newcommand{\vh}{{\vect{h}}}
+\newcommand{\vi}{{\vect{i}}}
+\newcommand{\vj}{{\vect{j}}}
+\newcommand{\vk}{{\vect{k}}}
+\newcommand{\vr}{{\vect{r}}}
+\newcommand{\vx}{{\vect{x}}}
+\newcommand{\vy}{{\vect{y}}}
+\newcommand{\vZ}{{\vect{Z}}}
+\newcommand{\vone}{{\vect{1}}}
+\newcommand{\constraint}{{\mathsf{C}}}
+
+\newcommand{\calA}{{\mathcal{A}}}
+\newcommand{\calB}{{\mathcal{B}}}
+\newcommand{\calC}{{\mathcal{C}}}
+\newcommand{\calH}{{\mathcal{H}}}
+\newcommand{\calI}{{\mathcal{I}}}
+\newcommand{\calK}{{\mathcal{K}}}
+\newcommand{\calP}{{\mathcal{P}}}
+\newcommand{\calQ}{{\mathcal{Q}}}
+\newcommand{\calo}{{\mathcal{O}}}
+\newcommand{\calR}{{\mathcal{R}}}
+\newcommand{\calS}{{\mathcal{S}}}
+\newcommand{\calT}{{\mathcal{T}}}
+\newcommand{\calU}{{\mathcal{U}}}
+\newcommand{\Abar}{{\overline{A}\,}}
+\newcommand{\Cbar}{{\overline{C}\,}}
+
+\newcommand{\poly}{{\sf pol}}
+\newcommand{\bfzero}{{\bf 0}}
+\newcommand{\bfone}{{\bf 1}}
+\newcommand{\mint}{{\sf mint}}
+%\newcommand{\parts}{\mbox{\sf PART}}
+\newcommand{\sx}{\hbox{\bbd S}}
+\newcommand{\track}[1]{[\leftrightarrow #1]}
+\newcommand{\krn}{\ensuremath{\operatorname{\bf ker }}}
+\newcommand{\first}{\mbox{\sf first}}
+\newcommand{\follow}{\mbox{\sf follow}}
+\newcommand{\trut}[1]{\rule{0mm}{#1mm}}
+\newcommand{\low}{\ensuremath{\operatorname{\sf low}}}
+\newcommand{\high}{\ensuremath{\operatorname{\sf high}}}
+\newcommand{\cds}{\ensuremath{\operatorname{\sf codes}}}
+\newcommand{\adna}{A_{\bf DNA}}
+\newcommand{\arna}{A_{\bf RNA}}
+\newcommand{\word}{\ensuremath{\operatorname{\sf word}}}
+\newcommand{\height}{\ensuremath{\operatorname{\sf height}}}
+\newcommand{\stepl}{\mbox{\sf ONESTEPL}}
+\newcommand{\derl}{\mbox{\sf DERL}}
+%\newcommand{\word}{\mbox{\sf word}}
+%\newcommand{\height}{\mbox{{\sf height}}}
+\newcommand{\Lsts}{\ensuremath{L_{\textit{sts}}}}
+\newcommand{\dsepl}{\ \ensuremath{|}\ }%    Same-line separator
+\newcommand{\Lit}[1]{\ $#1$\ }%             Literals
+\newcommand{\Lfactor}{\ensuremath{L_{\textit{factor}}}}
+\newcommand{\Lterm}{\ensuremath{L_{\textit{term}}}}
+\newcommand{\Lae}{\ensuremath{L_{\textit{ae}}}}
+\newcommand{\Lv}{\ensuremath{L_{\textit{v}}}}
+\newcommand{\Ln}{\ensuremath{L_{\textit{n}}}}
+\newcommand{\Lprec}{\ensuremath{\call_{\textit{prec}}}}
+\newcommand{\pred}{\mbox{\sf Pred}}
+\newcommand{\ci}{\mbox{\sf ci}}
+\newcommand{\loopid}[1]{\mbox{\sf LOOP}(#1)}
+\newcommand{\parl}[1]{\mbox{\sf PAR}_{#1}}
+\newcommand{\lps}[1]{(_{\scriptscriptstyle #1}}
+\newcommand{\rps}[1]{)_{\scriptscriptstyle #1}}
+\newcommand{\nspace}{\mbox{\bf NSPACE}}
+\newcommand{\dspace}{\mbox{\bf DSPACE}}
+\newcommand{\ntime}{\mbox{\bf NTIME}}
+\newcommand{\dtime}{\mbox{\bf DTIME}}
+\newcommand{\ospace}{\mbox{\bf SPACE}}
+\newcommand{\otime}{\mbox{\bf TIME}}
+\newcommand{\llma}{\mbox{LMA}}
+\newcommand{\sllma}{\mbox{\scriptsize LMA}}
+\newcommand{\iend}{i_{\mbox{\scriptsize end}}}
+\newcommand{\ibeg}{i_{\mbox{\scriptsize beg}}}
+\newcommand{\qaccb}{\bar{q}_{\mbox{\scriptsize acc}}}
+\newcommand{\qacc}{q_{\mbox{\scriptsize acc}}}
+\newcommand{\qrej}{q_{\mbox{\scriptsize rej}}}
+\newcommand{\qaccu}{q_{\mbox{\scriptsize acc1}}}
+\newcommand{\qreju}{q_{\mbox{\scriptsize rej1}}}
+\newcommand{\monus}{\stackrel{\mbox{$\cdot$}}{\smash[t]{-}}}
+%\newcommand{\monus}{\dot{-}}
+%\newcommand{\monus}{\stackrel{\textstyle \cdot}{-}}
+\newcommand{\halt}{q_{\mbox{\small halt}}}
+\newcommand{\apt}{q_{\mbox{\small accept}}}
+\newcommand{\rej}{q_{\mbox{\small reject}}}
+\newcommand{\blank}{{\scriptstyle \sqcup}}
+\newcommand{\rmark}{\ensuremath{\triangleleft}}
+\newcommand{\lmark}{\ensuremath{\triangleright}}
+\newcommand{\routine}{\mbox{}}
+\newcommand{\light}{\raisebox{1ex}{$\scriptscriptstyle \Diamond$ }}
+\newcommand{\hard}{\raisebox{1ex}{$\scriptscriptstyle \Diamond\Diamond$ }}
+\newcommand{\veryhard}{\raisebox{1ex}{$\scriptscriptstyle \Diamond\Diamond\Diamond$ }}
+%%FUNCTIONS
+\newcommand{\univf}{\ensuremath{\operatorname{\mathsf{univ}}}}
+\newcommand{\pf}{\mbox{\sf pf}}
+\newcommand{\fib}{\mbox{\sf fib}}
+\newcommand{\sortseq}{\mbox{\sf sortseq}}
+\newcommand{\nax}{\mbox{\sf nax}}
+\newcommand{\nprod}{\mbox{\sf nprod}}
+\newcommand{\stax}{\mbox{\sf stax}}
+\newcommand{\stprod}{\mbox{\sf stprod}}
+\newcommand{\ax}{\mbox{\sf ax}}
+\newcommand{\prd}{\mbox{\sf prod}}
+\newcommand{\lop}{\mbox{\sf lop}}
+\newcommand{\shift}{\mbox{\sf shift}}
+\newcommand{\conj}{\mbox{\sf conj}}
+\newcommand{\target}{\mbox{\sf target}}
+\newcommand{\pl}{\mbox{\sf pl}}
+\newcommand{\stepp}{\mbox{\sf haltsby}}
+\newcommand{\qnt}{\mbox{\sf QUINT}}
+\newcommand{\statef}{\mbox{\sf state}}
+\newcommand{\symbf}{\mbox{\sf symb}}
+\newcommand{\nextstate}{\mbox{\sf nextstate}}
+\newcommand{\nextsymb}{\mbox{\sf nextsymb}}
+\newcommand{\dirf}{\mbox{\sf dirf}}
+\newcommand{\quint}{\mbox{\sf quint}}
+\newcommand{\inpsize}{\mbox{\sf inpsize}}
+\newcommand{\stsize}{\mbox{\sf stsize}}
+\newcommand{\algf}{\mbox{\sf alg}}
+\newcommand{\timef}{\mbox{\sf time}}
+\newcommand{\lastcomp}{\mbox{\sf lastcomp}}
+\newcommand{\concs}{\mbox{\sf concs}}
+\newcommand{\length}{\mbox{\sf length}}
+\newcommand{\primep}{\mbox{\sf prime}}
+\newcommand{\prn}{\mbox{\sf prn}}
+\newcommand{\comp}{\mbox{\sf comp}}
+\newcommand{\expp}{\mbox{\sf expp}}
+\newcommand{\partf}{\mbox{\sf part}}
+\newcommand{\occ}{\mbox{\sf occ}}
+\newcommand{\prodf}{\mbox{\sf prod}}
+\newcommand{\exec}{\mbox{\sf exec}}
+%
+\newcommand{\size}{\mbox{\sf size}}
+\newcommand{\nextprod}{\mbox{\sf nextprod}}
+\newcommand{\nextword}{\mbox{\sf nextword}}
+\newcommand{\lbl}{\mbox{\sf label}}
+\newcommand{\goto}{\mbox{\sf goto}}
+\newcommand{\leftm}{\mbox{\sf leftm}}
+\newcommand{\rightm}{\mbox{\sf rightm}}
+\newcommand{\trim}{\mbox{\sf trim}}
+\newcommand{\trimlast}{\mbox{\sf trimlast}}
+\newcommand{\trimfirst}{\mbox{\sf trimfirst}}
+\newcommand{\frev}{\mbox{\sf rev}}
+\newcommand{\conc}{\mbox{\sf conc}}
+\newcommand{\lastof}{\mbox{\sf lastof}}
+\newcommand{\firstof}{\mbox{\sf firstof}}
+\newcommand{\isnotnull}{\mbox{\sf isnotnull}}
+\newcommand{\isnull}{\mbox{\sf isnull}}
+\newcommand{\opref}{<_{\mbox{\small {\rm pref}}}}
+\newcommand{\oprefeq}{\leq_{\mbox{\small {\rm pref}}}}
+\newcommand{\subw}{\leq_{\mbox{\small sub}}}
+\newcommand{\osuff}{<_{\mbox{\small {\rm suff}}}}
+\newcommand{\osuffeq}{\leq_{\mbox{\small {\rm suff}}}}
+\newcommand{\oinfeq}{\leq_{\mbox{\small {\rm infix}}}}
+\newcommand{\oinf}{<_{\mbox{\small {\rm infix}}}}
+\newcommand{\prend}{\mbox{\sf end}}
+\newcommand{\samelast}{\mbox{\sf samelast}}
+\newcommand{\samelen}{\mbox{\sf samelength}}
+\newcommand{\lengthp}{\mbox{\sf length}}
+\newcommand{\tape}{\mbox{\tt t}}
+\newcommand{\ID}{\mbox{\bf ID}}
+\newcommand{\lleft}{\mbox{\sf lleftmost}}
+\newcommand{\rleft}{\mbox{\sf rleftmost}}
+\newcommand{\replf}{\mbox{\sf repl}}
+\newcommand{\replr}{\mbox{\sf repl}'}
+\newcommand{\stepf}{\mbox{\sf step}}
+\newcommand{\pal}{\mbox{\sf pal}}
+\newcommand{\halff}{\mbox{\sf half}}
+\newcommand{\lcm}{\mbox{\rm lcm}}
+\newcommand{\expo}[1]{(#1)^{\S}}
+%%END-OF-FUNCTIONS
+\newcommand{\parrec}{\mbox{\sf PARREC}}
+\newcommand{\primrec}{\mbox{\sf PRIMREC}}
+\newcommand{\parm}{\mbox{\sf pk}}
+\newcommand{\sleft}{\mbox{\tiny left}}
+\newcommand{\sright}{\mbox{\tiny right}}
+\newcommand{\sz}{\mbox{\sf{Sz}}}
+\newcommand{\phrases}{\mbox{\sf PHRASES}}
+\newcommand{\norm}[1]{\parallel #1 \parallel}
+\newcommand{\shuf}{\mbox{\sf shuffle}}
+\newcommand{\fb}[1]{\fbox{\ensuremath{#1}}}
+\newcommand{\score}{\mbox{\sf score}}
+\newcommand{\simi}{\mbox{\sf sim}}
+% \newcommand{\align}{\mbox{\sf ALIGN}}
+\newcommand{\bl}{\flat}
+\newcommand{\rvec}[1]{\stackrel{{\scriptscriptstyle \leftarrow}}{#1}}
+\newcommand{\dvec}[1]{\stackrel{{\scriptscriptstyle \rightarrow}}{#1}}
+\newcommand{\vre}{\mbox{\tt |E|}}
+\newcommand{\vrf}{\mbox{\tt |F|}}
+\newcommand{\vrg}{\mbox{\tt |G|}}
+\newcommand{\RS}{\mbox{\sf RS}}
+\newcommand{\indx}{\mbox{\sf index}}
+\newcommand{\cost}{\mbox{\sf cost}}
+\newcommand{\genop}{\:\omega\:}
+\newcommand{\ignore}[1]{}
+\newcommand{\lastf}{\mbox{\sf last}}
+\newcommand{\acc}{\mbox{\sf acc}}
+\newcommand{\repl}{\mbox{\sf replace}}
+\newcommand{\ACC}{\mbox{\sf ACC}}
+\newcommand{\outd}{\partial_{out}}
+\newcommand{\ind}{\textsf{ind}}
+\newcommand{\deltastar}{\delta^*}
+\newcommand{\gammastar}{\gamma^*}
+\newcommand{\deltaprstar}{{\delta'}^*}
+\newcommand{\Deltastar}{\Delta^*}
+\newcommand{\children}{\mbox{\sf CHILDREN}}
+\newcommand{\back}{\mbox{\sf back}}
+\newcommand{\forw}{\mbox{\sf forw}}
+\newcommand{\sth}{\mbox{\sf sth}}
+\newcommand{\config}{\mbox{\sf CONFIG}}
+\newcommand{\matr}{{\sf MATR}}
+\newcommand{\pol}{{\sf POL}}
+\newcommand{\comb}[2]{\left(\!\!\begin{array}{c}#1 \\ #2\end{array}\!\!\right)}
+\newcommand{\qcomb}[2]{\left[\!\!\!\begin{array}{c}#1 \\ #2\end{array}\!\!\!\right]}
+\newcommand{\lfp}{{\tt lfp}}
+
+%\newcommand{\vk}{(\mbK)}
+\newcommand{\vl}{(\mbL)}
+%\newcommand{\vh}{(\mbH)}
+%\newcommand{\vx}{(\mbX)}
+%\newcommand{\vy}{(\mbY)}
+%\newcommand{\vz}{(\mbZ)}
+\newcommand{\depth}{\mbox{{\sf depth}}}
+\newcommand{\ws}{\mbox{{\sf ws}}}
+\newcommand{\weight}{\mbox{{\sf weight}}}
+
+\newcommand{\leaves}[1]{\mbox{\sf LEAVES}(#1)}
+\newcommand{\leavess}[2]{\mbox{\sf LEAVES}_{#1}(#2)}
+\newcommand{\intn}[1]{\mbox{\sf INTN}(#1)}
+%\newcommand{\ran}{\mbox{Ran }}
+\newcommand{\ran}{\operatorname{Ran}}
+%\newcommand{\dom}{\mbox{Dom }}
+\newcommand{\dom}{\operatorname{Dom}}
+\newcommand{\mran}{\mbox{\scriptsize Ran }}
+\newcommand{\mdom}{\mbox{\scriptsize Dom }}
+\newcommand{\gsa}{q}
+\newcommand{\gsb}{r}
+\newcommand{\lot}{lot}
+\newcommand{\lots}{lots}
+\newcommand{\lang}[1]{\mbox{$\parallel #1 \parallel$}}
+\newcommand{\rexp}{{\sf REXP}}
+\newcommand{\subexp}{{\sf SUBEXP}}
+\newcommand{\prog}{{\sf PROG}}
+\newcommand{\pref}{{\sf PREF}}
+\newcommand{\infix}{{\sf INFIX}}
+\newcommand{\suff}{{\sf SUFF}}
+\newcommand{\prefp}{{\sf PREFpr}}
+\newcommand{\infixp}{{\sf INFIXpr}}
+\newcommand{\suffp}{{\sf SUFFpr}}
+\newcommand{\prim}{\mbox{\sf PRIM}}
+\newcommand{\concat}[2]{\mbox{$#1\cdot #2$}}
+\newcommand{\mypar}{\hspace*{1em}}
+\newcommand{\smbox}[1]{\mbox{{\em {\scriptsize #1}}}}
+
+%\newcommand{\xn}{\raisebox{1mm}{\framebox[4mm]{\rule{0mm}{2mm}}}}
+
+%\newcommand{\xs}{
+%\raisebox{1mm}{\framebox[4mm]{${\scriptscriptstyle \surd}_{\mbox{\rule{0mm}{1ex}}}$}}}
+
+%\newcommand{\xpl}{
+%\raisebox{1mm}{
+%\framebox[4mm]{${\scriptscriptstyle \surd}_{\scriptscriptstyle +}$}}}
+
+%\newcommand{\xdo}{
+%\raisebox{1mm}{
+%\framebox[4mm]{${\scriptscriptstyle \surd}_{\scriptscriptstyle
+%\downarrow}$}}}
+
+%\newcommand{\xg}{
+%\raisebox{1mm}{
+%\framebox[4mm]{${\scriptscriptstyle \surd}_{\scriptscriptstyle G}$}}}
+
+%\newcommand{\xsc}{{\scriptscriptstyle \surd}}
+%\newcommand{\xplc}{{\scriptscriptstyle \surd}_{\scriptscriptstyle +}}
+%\newcommand{\xdoc}{{\scriptscriptstyle \surd}_{\scriptscriptstyle \downarrow}}
+%\newcommand{\xgc}{{\scriptscriptstyle \surd}_{\scriptscriptstyle G}}
+
+\newcommand{\rts}{\mbox{\tt rts}}
+\newcommand{\wts}{\mbox{\tt wts}}
+\newcommand{\FW}{\mbox{\tt FW}}
+\newcommand{\cg}{\mbox{\sf CG}}
+\newcommand{\confl}{\mbox{\sf conflict}}
+\newcommand{\redo}{\mbox{\it redo}}
+\newcommand{\undo}{\mbox{\it undo}}
+\newcommand{\tstart}{\mbox{\it start}}
+\newcommand{\trol}{\mbox{\it abort}}
+\newcommand{\abort}{\mbox{\it abort}}
+\newcommand{\tcom}{\mbox{\it commit}}
+\newcommand{\tread}{\mbox{\it read}}
+\newcommand{\twrite}{\mbox{\it write}}
+\newcommand{\rlock}{\mbox{\it rlock}}
+\newcommand{\wlock}{\mbox{\it wlock}}
+\newcommand{\unlock}{\mbox{\it unlock}}
+\newcommand{\bfr}{\textbf{r}}
+\newcommand{\bfR}{\mbox{\bf R}}
+\newcommand{\bfK}{\mbox{\bf K}}
+\newcommand{\bfL}{\mbox{\bf L}}
+\newcommand{\DA}{\mbox{\tt DA}}
+\newcommand{\TA}{\mbox{\tt TA}}
+\newcommand{\ACT}{\mbox{\tt ACT}}
+\newcommand{\SCHED}{\mbox{\tt SCHED}}
+\newcommand{\DCFORM}{\mbox{\tt DCFORM}}
+\newcommand{\TCFORM}{\mbox{\tt TCFORM}}
+\newcommand{\DCRLFORM}{\mbox{\tt DCRLFORM}}
+\newcommand{\BV}{\mbox{\sf BV}}
+\newcommand{\FV}{\mbox{\sf FV}}
+\newcommand{\CONS}{\mbox{\sf CONS}}
+\newcommand{\VAR}{\mbox{\sf VAR}}
+\newcommand{\CROSS}{\mbox{\sf CROSS}}
+\newcommand{\cross}{\mbox{\sf cross}}
+\newcommand{\dvar}{\mbox{\sf DVAR}}
+\newcommand{\tvar}{\mbox{\sf TVAR}}
+\newcommand{\dcexp}{\mbox{\sf DCEXP}}
+\newcommand{\tcexp}{\mbox{\sf TCEXP}}
+\newcommand{\fattr}{\mbox{\sf attr}}
+%\newcommand{\xbox}[1]{\mbox{\scriptsize{\em #1}}}
+\hyphenation{state-ment}
+\hyphenation{se-mes-ter}
+\hyphenation{data-base}
+\newlength{\savefboxsep}
+\setlength{\savefboxsep}{\fboxsep}
+\newcommand{\twoderives}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}[t]{c}
+                              \Rightarrow\\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                            \renewcommand{\arraystretch}{1} }
+\newcommand{\twoderivesthin}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}[t]{c}
+                              \rightarrow\\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                              \renewcommand{\arraystretch}{1} }
+\newcommand{\parrow}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}[t]{c}
+                              \rightarrow\\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                              \renewcommand{\arraystretch}{1} }
+
+\newcommand{\threederives}[2]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}{c}
+                              {\scriptstyle #1}\\
+                              \Rightarrow\\
+                              {\scriptstyle #2}
+                              \end{array}
+                              $}
+                              \renewcommand{\arraystretch}{1} }
+
+
+\newcommand{\nullstr}{\lambda}
+\newcommand{\ident}{1}
+\newcommand{\id}{\mbox{$\iota$}}
+%\newcommand{\rev}[1]{\mbox{${#1}^{R}$}}
+\newcommand{\rev}[1]{{#1}^{R}}
+\newcommand{\st}{\,\mid\,}
+\newcommand{\sch}{\mbox{{\sf sch}}}
+\newcommand{\lw}{\longrightarrow}
+\newcommand{\slw}{\leftarrow}
+\newcommand{\rw}{\rightarrow}
+\newcommand{\regexp}{\mbox{REG}}
+\newcommand{\D}{\mbox{$\Delta$}}
+\newcommand{\G}{\mbox{$\Gamma$}}
+\newcommand{\xxx}{\mbox{$x_{1},\ldots,x_{n}$}}
+\newcommand{\xxxp}{\mbox{$x_{1}',\ldots,x_{n}'$}}
+%\newcommand{\openbox}{\setlength{\fboxsep}{0in}
+%                      \framebox[3mm]{\rule{0mm}{3mm}}
+%                      \setlength{\fboxsep}{\savefboxsep} }
+%\newcommand{\qed}{\hspace*{\fill}\mbox{\rule{0.4em}{0.8em}}}
+\newcommand{\finsol}{\hspace*{\fill}\mbox{\rule{0.4em}{0.4em}}}
+%\newcommand{\proof}{\noindent {\bf Proof. }}
+\newcommand{\semijoin}{\stackrel{\rightarrow}{\Join}}
+\newcounter{saveenumi}
+\newcommand{\startbreakenumi}
+     {\vspace{3mm}
+     \setcounter{saveenumi}{\theenumi}
+      \end{enumerate}}
+\newcommand{\stopbreakenumi}
+     {\vspace{3mm}
+     \begin{enumerate}
+       \setcounter{enumi}{\thesaveenumi}}
+\newcounter{saveenumii}
+\newcommand{\startbreakenumii}
+     {\setcounter{saveenumii}{\arabic{enumii}}
+      \end{enumerate}}
+\newcommand{\stopbreakenumii}
+     {\begin{enumerate}
+       \setcounter{enumii}{\thesaveenumii}}
+\newcommand{\restrict}{\setlength{\unitlength}{.05ex}
+                        \begin{picture}(40,0)
+                          \put(5,-10){\line(0,1){50}}
+                          \put(-8,10){\`{}}
+                         \end{picture}
+                        \setlength{\unitlength}{1pt} \!\!\!}
+\newcommand{\mv}{\setlength{\unitlength}{1mm}
+                  \begin{picture}(4,4)
+                   \put(0,1.7){\vector(1,0){4}}
+                   \put(2,1.7){\vector(1,0){0}}
+                  \end{picture}
+                 \setlength{\unitlength}{1pt}\;}
+\newtheorem{THM}{Theorem}[section]
+\newtheorem{de}[THM]{Definition}
+\newtheorem{definition}[THM]{Definition}
+
+\newenvironment{DE}{\begin{de}\rm}{\hspace*{\fill}\raisebox{0.35em}{\framebox[0.4em]{\rule{0em}{0.12em}}}\end{de}}
+\newtheorem{exm}[THM]{Example}
+\newenvironment{EX}{\begin{exm}\rm}{\hspace*{\fill}\raisebox{0.35em}{\framebox[0.4em]{\rule{0em}{0.12em}}}\end{exm}}
+
+%\newcommand{\qed}{\hspace*{\fill}\raisebox{0.35em}{\framebox[0.4em]{\rule{0em}{0.12em}}}}
+
+%\newtheorem{OBS}[THM]{Observation}
+%\newtheorem{LE}[THM]{Lemma}
+%\newtheorem{AX}[THM]{Axiom}
+%\newtheorem{CO}[THM]{Corollary}
+%\newtheorem{COR}[THM]{Corollary}
+%\newtheorem{PR}[THM]{Proposition}
+%\newtheorem{alg}[THM]{Algorithm}
+%\newenvironment{AL}{\begin{alg}\rm}{\hspace*{\fill}\halbox\end{alg}}
+%\newtheorem{con}[THM]{Construction}
+%\newenvironment{CN}{\begin{con}\rm}{\end{con}}
+\newcommand{\range}[2]{\mbox{{\bf range of }}$#1$ \mbox{ {\bf is }}#2}
+\newcommand{\head}{\mbox{\em heading\/}}
+\newcommand{\isa}{\mbox{ {\bf is-a} }}
+\newcommand{\exte}[1]{\parallel #1 \parallel}
+\newcommand{\rename}[6]{(#1 \rw #2,\ldots #3 \rw #4;#5)(#6)}
+\newcommand{\attr}[1]{{\bf Attr}(#1)}
+\newcommand{\tupl}[1]{{\bf tupl}(#1)}
+\newcommand{\rel}[1]{{\bf rel}(#1)}
+\newcommand{\REXP}[1]{{\bf REXP}(#1)}
+\newcommand{\tree}{{\sf TREE}}
+\newcommand{\trees}{{\sf TREES}}
+\newcommand{\der}{{\sf DER}}
+\newcommand{\dt}{{\sf DT}}
+\newcommand{\bfH}{{\bf H}}
+\newcommand{\mbfH}{\mbox{\scriptsize {\bf H}}}
+\newcommand{\mbfS}{\mbox{\scriptsize {\bf S}}}
+\newcommand{\bfS}{{\bf S}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cald}{{\cal D}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\calh}{{\cal H}}
+\newcommand{\cali}{{\cal I}}
+\newcommand{\calk}{{\cal K}}
+\newcommand{\calp}{{\cal P}}
+\newcommand{\calq}{{\cal Q}}
+\newcommand{\calm}{{\cal M}}
+\newcommand{\calmdup}[1]{{\cal M}_{{\rm dupl},#1}}
+\newcommand{\calml}{{\cal M}_{{\rm left}}}
+\newcommand{\calmr}{{\cal M}_{{\rm right}}}
+\newcommand{\calmsfr}[1]{{\cal M}_{{\rm right} ?#1}}
+\newcommand{\calmsfl}[1]{{\cal M}_{{\rm left} ?#1}}
+\newcommand{\calmp}[1]{{\cal M}_{{\rm print}\;#1}}
+\newcommand{\calmer}{{\cal M}_{{\rm erase}}}
+\newcommand{\calmtest}{{\cal M}_{{\rm test}}}
+\newcommand{\raised}[2]{$#1^{\rm #2}$}
+\newcommand{\calmz}{{\cal M}_0}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\cals}{{\cal S}}
+\newcommand{\calt}{{\cal T}}
+\newcommand{\calu}{{\cal U}}
+\newcommand{\calv}{{\cal V}}
+\newcommand{\caldb}{{\cal DB}}
+\newcommand{\qand}{\mbox{ {\bf and} }}
+\newcommand{\qor}{\mbox{ {\bf or} }}
+\newcommand{\qnot}{\mbox{ {\bf not} }}
+\newcommand{\compo}{\vdash}
+\newcommand{\compr}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}[t]{c}
+                              \vdash \\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                        \renewcommand{\arraystretch}{1} }
+
+\newcommand{\compn}[2]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}{c}
+                              {\scriptstyle #1} \\
+                              \vdash \\
+                              {\scriptstyle #2}
+                              \end{array}
+                              $}
+                        \renewcommand{\arraystretch}{1} }
+
+
+\newcommand{\compstar}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}{c}
+                              {\scriptstyle *}\\
+                              \vdash \\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                              \renewcommand{\arraystretch}{1} }
+\newcommand{\compplus}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}{c}
+                              {\scriptstyle +}\\
+                              \vdash \\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                              \renewcommand{\arraystretch}{1} }
+
+%\newcommand{\compstaro}{\renewcommand{\arraystretch}{.5}
+%                            \mbox{$
+%                              \begin{array}{c}
+%                              {\scriptstyle *}\\
+%                              \vdash
+%                              \end{array}
+%                              $}
+%                              \renewcommand{\arraystretch}{1} }
+\newlength{\vdl}\settowidth{\vdl}{\ensuremath{\vdash}}
+\newcommand{\compstaro}{%
+    \makebox[1.5\vdl]{\makebox[0pt][l]{\ensuremath{\vdash}}%
+    \hspace{0.25\vdl}%
+	\raisebox{1.00ex}{\ensuremath{\scriptstyle *}}}
+}
+
+
+\newcommand{\comprn}[2]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}{c}
+                              {\scriptstyle #1}\\
+                              \vdash \\
+                              {\scriptstyle #2}
+                              \end{array}
+                              $}
+                              \renewcommand{\arraystretch}{1} }
+
+\newcommand{\lpar}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}[t]{c}
+                              ( \\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                        \renewcommand{\arraystretch}{1} }
+
+\newcommand{\rpar}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}[t]{c}
+                              ) \\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                        \renewcommand{\arraystretch}{1} }
+
+
+
+
+
+
+
+%\newcommand{\solution}{\noindent {\bf Solution. }}
+\newcommand{\hint}{\noindent {\bf Hint. }}
+
+\def\crt{\mbox{{\bf create table} }}
+\def\crv{\mbox{{\bf create view} }}
+\def\cri{\mbox{{\bf create index} }}
+\def\union{\mbox{ {\bf union} }}
+\def\intersect{\mbox{ {\bf intersect} }}
+\def\minus{\mbox{ {\bf minus} }}
+\def\all{\mbox{ {\bf all} }}
+\def\any{\mbox{ {\bf any} }}
+\def\between{\mbox{ {\bf between} }}
+\def\from{\mbox{ {\bf from} }}
+\def\where{\mbox{ {\bf where} }}
+\def\exi{\mbox{ {\bf exists} }}
+\def\nexi{\mbox{ {\bf not exists} }}
+\def\whenever{\mbox{\bf whenever}}
+\def\R{\mbox{ {\bf R} }}
+\def\T{\mbox{ {\bf T} }}
+\def\F{\mbox{ {\bf F} }}
+\font\SJoinFont=msbm10 at 12pt
+\def\sjoin{\mbox{\SJoinFont\char110}}
+\def\la{\mbox{$\langle$}}
+\def\ra{\mbox{$\rangle$}}
+\def\bT{\mbox{\bf T}}
+\def\bF{\mbox{\bf F}}
+\def\bU{\mbox{\bf U}}
+\def\tr{\mbox{\bf T}}
+\def\fa{\mbox{\bf F}}
+\def\FD{\mbox{\sf FD}}
+\def\MV{\mbox{\sf MV}}
+\def\JD{\mbox{\sf JD}}
+\def\a{\mbox{$\alpha$}}
+\def\b{\mbox{$\beta$}}
+\def\e{\mbox{$\epsilon$}}
+\def\c{\mbox{$\gamma$}}
+\def\C{\mbox{$\Gamma$}}
+\def\m{\mbox{$\mu$}}
+\newcommand{\frule}[2]{\mbox{$\displaystyle{\frac{#1}{#2}}$}}
+\newcommand{\lfrule}[3]{\mbox{$\begin{array}{cl}
+                          #1&\\ \cline{1-1} #2&\!\!{}^{#3}
+\end{array}$}}
+\newcommand{\fora}{\mbox{$\varphi$}}
+\newcommand{\infer}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}[t]{c}
+                              \vdash \\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                            \renewcommand{\arraystretch}{1} }
+
+\newcommand{\ol}[1]{\mbox{$\overline{#1}$}}
+\def\deg{\partial}
+\newcommand{\chase}[2]{{\bf CHASE}_{#1}(#2)}
+\newcommand{\cl}[2]{{\tt cl}_{#1}(#2)}
+\newcommand{\rcl}[3]{{\tt cl}_{#1}^{#2}(#3)}
+\def\mva{\mbox{$\longrightarrow \!\!\!\!\!\!\!\!\rightarrow\;\;$}}
+\newcommand{\mvd}{\mbox{\sf mvd}}
+\newcommand{\bdef}{\left\{ \begin{array}{ll}}
+\newcommand{\fdef}{\end{array} \right.}
+\newcommand{\fillin}[1]{
+\typeout{************}%
+\typeout{* Reminder * ->>>> #1}%
+\typeout{************}%
+}
+\newcommand{\etc}{\mbox{etc}}
+\newcommand{\cf}{\mbox{cf}}
+\newcommand{\pj}[1]{\mbox{\bf pj}_{#1}}
+\newcommand{\projm}[1]{\mbox{\bf proj}_{\bf #1}}
+\newcommand{\joinm}[1]{\mbox{\bf join}_{\bf #1}}
+\newcommand{\ie}{i.e.}
+\newcommand{\eg}{{e.g.}}
+\newcommand{\ura}{{\it u.r.a.\/}}
+%\newcommand{\etal}{{\it et al.\/}}
+\newcommand{\extravspace}{\vspace{2ex}}
+\newcommand{\Name}{{\tt N}}
+\newcommand{\Null}{{\bf null}}
+\newcommand{\oper}{\mbox{ {\tt op} }}
+\newcommand{\coext}{\stackrel{\ast}{=}}
+\newcommand{\SAT}{\mbox{{\tt SAT} }}
+\newcommand{\SATX}{\mbox{{\tt SATX} }}
+\newcommand{\TX}{\mbox{\cal TX}}
+\newcommand{\CS}[2]{\mbox{CS}_{#1}(#2)}
+\newcommand{\Ru}[1]{R_{\mbox{\scriptsize {\em #1}}}}
+\newcommand{\seqa}{\mbox{\sf S}}
+\newcommand{\seqb}{\mbox{\sf T}}
+\newcommand{\seqc}{\mbox{\sf X}}
+\newcommand{\seqd}{\mbox{\sf Y}}
+\font\bmit=cmmib10 % math bold italic
+\font\bbd=msbm10      % "blackboard bold"
+\newcommand{\rr}{\hbox{\bbd R}}
+\newcommand{\nn}{\hbox{\bbd N}}
+\newcommand{\qq}{\hbox{\bbd Q}}
+\newcommand{\zz}{\hbox{\bbd Z}}
+\newcommand{\pp}{\hbox{\bbd P}}
+\newcommand{\bb}{\hbox{\bbd B}}
+
+\newcommand{\seq}{\mbox{\bf Seq}}
+\newcommand{\fseq}{\mbox{\bf FSeq}}
+\newcommand{\mba}{\hbox{\bmit a}}
+\newcommand{\mbb}{\hbox{\bmit b}}
+\newcommand{\mbc}{\hbox{\bmit c}}
+\newcommand{\mbd}{\hbox{\bmit d}}
+\newcommand{\mbe}{\hbox{\bmit e}}
+\newcommand{\mbf}{\hbox{\bmit f}}
+\newcommand{\mbg}{\hbox{\bmit g}}
+\newcommand{\mbi}{\hbox{\bmit i}}
+\newcommand{\mbj}{\hbox{\bmit j}}
+\newcommand{\mbk}{\hbox{\bmit k}}
+\newcommand{\mbl}{\hbox{\bmit l}}
+\newcommand{\mbm}{\hbox{\bmit m}}
+\newcommand{\mbn}{\hbox{\bmit n}}
+\newcommand{\mbo}{\hbox{\bmit o}}
+\newcommand{\mbp}{\hbox{\bmit p}}
+\newcommand{\mbq}{\hbox{\bmit q}}
+\newcommand{\mbs}{\hbox{\bmit s}}
+\newcommand{\mbr}{\hbox{\bmit r}}
+\newcommand{\mbt}{\hbox{\bmit t}}
+\newcommand{\mbu}{\hbox{\bmit u}}
+\newcommand{\mbw}{\hbox{\bmit w}}
+\newcommand{\mbv}{\hbox{\bmit v}}
+\newcommand{\mbx}{\hbox{\bmit x}}
+\newcommand{\mby}{\hbox{\bmit y}}
+\newcommand{\mbz}{\hbox{\bmit z}}
+\newcommand{\mbzero}{\hbox{\bmit 0}}
+\newcommand{\mbone}{\hbox{\bmit 1}}
+\newcommand{\mbA}{\hbox{\bmit A}}
+\newcommand{\mbB}{\hbox{\bmit B}}
+\newcommand{\mbC}{\hbox{\bmit C}}
+\newcommand{\mbD}{\hbox{\bmit D}}
+\newcommand{\mbE}{\hbox{\bmit E}}
+\newcommand{\mbF}{\hbox{\bmit F}}
+\newcommand{\mbG}{\hbox{\bmit G}}
+\newcommand{\mbH}{\hbox{\bmit H}}
+\newcommand{\mbI}{\hbox{\bmit I}}
+\newcommand{\mbJ}{\hbox{\bmit J}}
+\newcommand{\mbK}{\hbox{\bmit K}}
+\newcommand{\mbL}{\hbox{\bmit L}}
+\newcommand{\mbM}{\hbox{\bmit M}}
+\newcommand{\mbN}{\hbox{\bmit N}}
+\newcommand{\mbO}{\hbox{\bmit O}}
+\newcommand{\mbP}{\hbox{\bmit P}}
+\newcommand{\mbQ}{\hbox{\bmit Q}}
+\newcommand{\mbS}{\hbox{\bmit S}}
+\newcommand{\mbR}{\hbox{\bmit R}}
+\newcommand{\mbT}{\hbox{\bmit T}}
+\newcommand{\mbU}{\hbox{\bmit U}}
+\newcommand{\mbV}{\hbox{\bmit V}}
+\newcommand{\mbX}{\hbox{\bmit X}}
+\newcommand{\mbY}{\hbox{\bmit Y}}
+\newcommand{\mbZ}{\hbox{\bmit Z}}
+\newcommand{\mbplus}{\mbox{\hbox{\bmit $+$}}}
+\newcommand{\mbcdot}{\mbox{\hbox{\bmit $\cdot$}}}
+\newcommand{\remptyset}{\mbox{\bf \O}}
+\newcommand{\ttA}{\mbox{\tt A}}
+\newcommand{\ttB}{\mbox{\tt B}}
+\newcommand{\ttC}{\mbox{\tt C}}
+\newcommand{\ttD}{\mbox{\tt D}}
+\newcommand{\ttE}{\mbox{\tt E}}
+\newcommand{\ttF}{\mbox{\tt F}}
+\newcommand{\ttG}{\mbox{\tt G}}
+\newcommand{\ttH}{\mbox{\tt H}}
+\newcommand{\ttI}{\mbox{\tt I}}
+\newcommand{\ttJ}{\mbox{\tt J}}
+\newcommand{\ttK}{\mbox{\tt K}}
+\newcommand{\ttL}{\mbox{\tt L}}
+\newcommand{\ttM}{\mbox{\tt M}}
+\newcommand{\ttN}{\mbox{\tt N}}
+\newcommand{\ttO}{\mbox{\tt O}}
+\newcommand{\ttP}{\mbox{\tt P}}
+\newcommand{\ttQ}{\mbox{\tt Q}}
+\newcommand{\ttR}{\mbox{\tt R}}
+\newcommand{\ttS}{\mbox{\tt S}}
+\newcommand{\ttT}{\mbox{\tt T}}
+\newcommand{\ttU}{\mbox{\tt U}}
+\newcommand{\ttV}{\mbox{\tt V}}
+\newcommand{\ttX}{\mbox{\tt X}}
+\newcommand{\ttY}{\mbox{\tt Y}}
+\newcommand{\ttZ}{\mbox{\tt Z}}
+\newcommand{\tta}{\mbox{\tt a}}
+\newcommand{\ttb}{\mbox{\tt b}}
+\newcommand{\ttc}{\mbox{\tt c}}
+\newcommand{\ttd}{\mbox{\tt d}}
+\newcommand{\tte}{\mbox{\tt e}}
+\newcommand{\ttf}{\mbox{\tt f}}
+\newcommand{\ttg}{\mbox{\tt g}}
+\newcommand{\tth}{\mbox{\tt h}}
+\newcommand{\tti}{\mbox{\tt i}}
+\newcommand{\ttj}{\mbox{\tt j}}
+\newcommand{\ttk}{\mbox{\tt k}}
+\newcommand{\ttl}{\mbox{\tt l}}
+\newcommand{\ttm}{\mbox{\tt m}}
+\newcommand{\ttn}{\mbox{\tt n}}
+\newcommand{\tto}{\mbox{\tt o}}
+\newcommand{\ttp}{\mbox{\tt p}}
+\newcommand{\ttq}{\mbox{\tt q}}
+\newcommand{\ttr}{\mbox{\tt r}}
+\newcommand{\tts}{\mbox{\tt s}}
+\newcommand{\ttt}{\mbox{\tt t}}
+\newcommand{\ttu}{\mbox{\tt u}}
+\newcommand{\ttv}{\mbox{\tt v}}
+\newcommand{\ttx}{\mbox{\tt x}}
+\newcommand{\tty}{\mbox{\tt y}}
+\newcommand{\ttz}{\mbox{\tt z}}
+\newcommand{\ttzero}{\mbox{\tt 0}}
+
+
+\newcommand{\sfA}{\ensuremath{\operatorname{\mathsf A}}}
+\newcommand{\sfB}{\ensuremath{\operatorname{\mathsf B}}}
+\newcommand{\sfC}{\ensuremath{\operatorname{\mathsf C}}}
+\newcommand{\sfD}{\ensuremath{\operatorname{\mathsf D}}}
+\newcommand{\sfE}{\ensuremath{\operatorname{\mathsf E}}}
+\newcommand{\sfF}{\ensuremath{\operatorname{\mathsf F}}}
+\newcommand{\sfG}{\ensuremath{\operatorname{\mathsf G}}}
+\newcommand{\sfH}{\ensuremath{\operatorname{\mathsf H}}}
+\newcommand{\sfI}{\ensuremath{\operatorname{\mathsf I}}}
+\newcommand{\sfJ}{\ensuremath{\operatorname{\mathsf J}}}
+\newcommand{\sfK}{\ensuremath{\operatorname{\mathsf K}}}
+\newcommand{\sfL}{\ensuremath{\operatorname{\mathsf L}}}
+\newcommand{\sfM}{\ensuremath{\operatorname{\mathsf M}}}
+\newcommand{\sfN}{\ensuremath{\operatorname{\mathsf N}}}
+\newcommand{\sfO}{\ensuremath{\operatorname{\mathsf O}}}
+\newcommand{\sfP}{\ensuremath{\operatorname{\mathsf P}}}
+\newcommand{\sfQ}{\ensuremath{\operatorname{\mathsf Q}}}
+\newcommand{\sfR}{\ensuremath{\operatorname{\mathsf R}}}
+\newcommand{\sfS}{\ensuremath{\operatorname{\mathsf S}}}
+\newcommand{\sfT}{\ensuremath{\operatorname{\mathsf T}}}
+\newcommand{\sfU}{\ensuremath{\operatorname{\mathsf U}}}
+\newcommand{\sfV}{\ensuremath{\operatorname{\mathsf V}}}
+\newcommand{\sfX}{\ensuremath{\operatorname{\mathsf X}}}
+\newcommand{\sfY}{\ensuremath{\operatorname{\mathsf Y}}}
+\newcommand{\sfZ}{\ensuremath{\operatorname{\mathsf Z}}}
+\newcommand{\sfa}{\ensuremath{\operatorname{\mathsf a}}}
+\newcommand{\sfb}{\ensuremath{\operatorname{\mathsf b}}}
+\newcommand{\sfc}{\ensuremath{\operatorname{\mathsf c}}}
+\newcommand{\sfd}{\ensuremath{\operatorname{\mathsf d}}}
+\newcommand{\sfe}{\ensuremath{\operatorname{\mathsf e}}}
+\newcommand{\sff}{\ensuremath{\operatorname{\mathsf f}}}
+\newcommand{\sfg}{\ensuremath{\operatorname{\mathsf g}}}
+\newcommand{\sfh}{\ensuremath{\operatorname{\mathsf h}}}
+\newcommand{\sfi}{\ensuremath{\operatorname{\mathsf i}}}
+\newcommand{\sfj}{\ensuremath{\operatorname{\mathsf j}}}
+\newcommand{\sfk}{\ensuremath{\operatorname{\mathsf k}}}
+\newcommand{\sfl}{\ensuremath{\operatorname{\mathsf l}}}
+\newcommand{\sfm}{\ensuremath{\operatorname{\mathsf m}}}
+\newcommand{\sfn}{\ensuremath{\operatorname{\mathsf n}}}
+\newcommand{\sfo}{\ensuremath{\operatorname{\mathsf o}}}
+\newcommand{\sfp}{\ensuremath{\operatorname{\mathsf p}}}
+\newcommand{\sfq}{\ensuremath{\operatorname{\mathsf q}}}
+\newcommand{\sfr}{\ensuremath{\operatorname{\mathsf r}}}
+\newcommand{\sfs}{\ensuremath{\operatorname{\mathsf s}}}
+\newcommand{\sft}{\ensuremath{\operatorname{\mathsf t}}}
+\newcommand{\sfu}{\ensuremath{\operatorname{\mathsf u}}}
+\newcommand{\sfv}{\ensuremath{\operatorname{\mathsf v}}}
+\newcommand{\sfx}{\ensuremath{\operatorname{\mathsf x}}}
+\newcommand{\sfy}{\ensuremath{\operatorname{\mathsf y}}}
+\newcommand{\sfz}{\ensuremath{\operatorname{\mathsf z}}}
+
+
+
+\newcommand{\vvq}{\left( \begin{array}{l}Q_0 \\ \vdots \\ Q_{n-1}
+\end{array} \right)}
+\newcommand{\vvk}{\left( \begin{array}{l}K_0 \\ \vdots \\ K_{n-1}
+\end{array} \right)}
+\newcommand{\vvz}{\left( \begin{array}{l}Z_0 \\ \vdots \\ Z_{n-1}
+\end{array} \right)}
+\newcommand{\vvh}{\left( \begin{array}{l}H_0 \\ \vdots \\ H_{n-1}
+\end{array} \right)}
+\newcommand{\vemp}{(\emptyset,\ldots,\emptyset)}
+\newcommand{\vvemp}{\left( \begin{array}{l}\emptyset \\ \vdots \\ \emptyset
+\end{array} \right)}
+\newcommand{\vvempf}{\left( \begin{array}{l}\emptyset \\ \emptyset \\
+\emptyset \\ \emptyset
+\end{array} \right)}
+\newcommand{\derives}{\Rightarrow}
+\newcommand{\derivesstar}{\stackrel{* }{\Rightarrow}}
+\newcommand{\derivesn}[1]{\stackrel{#1\ }{\Rightarrow}}
+\newcommand{\eq}{=}
+\newcommand{\failf}{\varphi}
+\newcommand{\pgm}[1]{{\tt #1}}
+\newcommand{\lex}{{\tt lex}}
+\newcommand{\awk}{{\tt aux}}
+\newcommand{\yacc}{{\tt yacc}}
+\newcommand{\matches}{\ensuremath{\sim}}
+\newcommand{\notmatches}{\ensuremath{!\sim}}
+\newcommand{\tmshiftr}{\calm_{\mbox{\scriptsize shift r}}}
+\newcommand{\tmshiftl}{\calm_{\mbox{\scriptsize shift l}}}
+\newcommand{\tmshiftlstar}{\calm_{\mbox{\scriptsize shift l$\ast$}}}
+\newcommand{\tmrepl}[2]{\calm_{#1 \rightarrow_l #2}}
+\newcommand{\ntmrepl}[2]{\calm_{#1 \rightarrow #2}}
+\newcommand{\BAR}[1]{\ensuremath{\bar{#1}}}
+\newcommand{\lol}{\call_{\mbox{\scriptsize \textit{0L}}}}
+\newcommand{\ldol}{\call_{\mbox{\scriptsize \textit{D0L}}}}
+\newcommand{\luol}{\call_{\mbox{\scriptsize \textit{U0L}}}}
+
+\newcommand{\dnam}[2]{
+\begin{tabular}{l}
+$5'$\hspace{2mm} {\sf #1}\hspace{2mm}$3'$\\
+$3'$\hspace{2mm} {\sf #2}\hspace{2mm}$5'$
+\end{tabular}}
+
+\newcommand{\dnamr}[2]{
+\begin{tabular}{r}
+$5'$\hspace{2mm} {\sf #1}\hspace{2mm}$3'$\\
+$3'$\hspace{2mm} {\sf #2}\hspace{2mm}$5'$
+\end{tabular}}
+
+\newcommand{\dlr}{\mbox{\$}}
+
+\newlength{\vhx}\settowidth{\vhx}{\ensuremath{\rightharpoonup}}
+\newcommand{\hder}{%
+    \makebox[1.5\vhx]{\makebox[0pt][l]{\ensuremath{\rightharpoondown}}%
+	\raisebox{0.20ex}{\ensuremath{\rightharpoonup}}}
+}%
+
+\newcommand{\htwoderives}[1]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}[t]{c}
+                              \hder\\
+                              {\scriptstyle #1}
+                              \end{array}
+                              $}
+                            \renewcommand{\arraystretch}{1} }
+
+\newcommand{\hthreederives}[2]{\renewcommand{\arraystretch}{.5}
+                            \mbox{$
+                              \begin{array}{c}
+                              {\scriptstyle #1}\\
+                              \hder\\
+                              {\scriptstyle #2}
+                              \end{array}
+                              $}
+                              \renewcommand{\arraystretch}{1} }
+
+
+\newcommand{\marker}{\ensuremath{\triangle}}
+
+\newcommand{\tx}{\textsf{to}}
+\newcommand{\bfa}{\textbf{a}}
+\newcommand{\bfs}{\textbf{s}}
+\newcommand{\bfx}{\textbf{x}}
+\newcommand{\bfz}{\textbf{z}}
+\newcommand{\bfp}{\textbf{p}}
+\newcommand{\bfw}{\textbf{w}}
+\newcommand{\bfB}{\textbf{B}}
+\newcommand{\bfb}{\textbf{b}}
+\newcommand{\bfu}{\textbf{u}}
+\newcommand{\bfv}{\textbf{v}}
+\newcommand{\bft}{\textbf{t}}
+\newcommand{\bfq}{\textbf{q}}
+\newcommand{\eud}{{\cal D}}
+\newcommand{\eudd}{{\cal D}'}
+\newcommand{\eum}{{\cal M}}
+\newcommand{\eup}{{\cal P}}
+\newcommand{\eus}{{\cal S}}
+\newcommand{\euu}{{\cal U}}
+\newcommand{\eut}{{\cal T}}

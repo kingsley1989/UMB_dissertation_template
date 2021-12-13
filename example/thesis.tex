@@ -1,0 +1,110 @@
+%%
+\documentclass{umassthesis}          % for Ph.D. dissertation or proposal
+% \documentclass[thesis]{umassthesis}  % for Master's thesis
+
+%%
+%% If you have enough figures or tables that you run out of space for their
+%% numbers in the List of Tables or List of figures, you can use the following
+%% command to adjust the space left for numbers.  The default is shown:
+%%
+%% \setlength{\tablenumberwidth}{2.3em}
+
+%% Use the hyperref package if you're producing a version for online
+%% distribution and you want hyperlinks.  Note that the Grad School doesn't want
+%% their PDF viewers to colorize or otherwise highlight the links; use the
+%% hidelinks option to hyperref to avoid decorating links.
+%\usepackage[hidelinks]{hyperref}
+
+%% One way of formatting the epigraph/frontispiece is to use this package.
+%\usepackage{epigraph}
+\usepackage{afterpage}
+%\usepackage{algorithm}
+\usepackage[titlenotnumbered,ruled,vlined]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{euscript}
+%\usepackage{fixltx2e}
+\usepackage{float}
+\usepackage{flushend}
+\usepackage{graphicx}
+\usepackage{hhline}
+\usepackage{multirow}
+%\usepackage{slashbox}
+%\usepackage{subfig}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\tikzset{relation/.style={%
+           shape=diamond,draw=relation@colour!50!gray,
+           ultra thick,fill=relation@colour!25!white,
+           minimum height=2em},
+         entity/.style={%
+           shape=rectangle,draw=entity@colour!50!gray,
+           ultra thick,fill=entity@colour!25!white,
+           minimum height=2em}}
+
+\setlength{\heavyrulewidth}{1.2pt}
+\newcommand{\HV}{\textsf{HV}}
+\colorlet{relation@colour}[rgb]{blue}
+\colorlet{entity@colour}[rgb]{red}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\input{macro}
+
+\usepackage{lipsum}
+%% Document Start
+\begin{document}
+%%
+\input{chapters/headpages.tex}
+
+%% Chapter Begins
+\chapter{Introduction}\label{chp:intro}
+
+	\input{chapters/intro.tex}
+
+
+\chapter{Preliminaries}\label{chp:prlm}
+
+	\input{chapters/prlm.tex}
+
+\chapter{Data}\label{chp:data}
+	\input{chapters/data.tex}
+
+\chapter{Methodology}\label{chp:method}
+	\input{chapters/method.tex}
+	
+\chapter{Disscusion}\label{chp:diss}
+	\input{chapters/disscus.tex}
+
+\chapter{Conclusions}\label{chp:cncld}
+	\input{chapters/cncld.tex}
+
+
+%% End of body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+%\chapter{THE FIRST APPENDIX TITLE}
+%...
+%\chapter{THE SECOND APPENDIX TITLE}
+%...
+
+%%
+%% Beginning of back matter
+\backmatter  %% <--- mandatory
+
+%%
+%% A bibliography is required.
+\interlinepenalty=10000  % prevent split bibliography entries
+\bibliographystyle{umassthesis}%ieeetr
+\bibliography{thesis}
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

@@ -1,0 +1,73 @@
+%% You must fill in all of these appropriately
+\title{Dissertation Title}
+\author{John XXX}
+\date{May 2019}
+\copyrightyear{2019}
+\bachelors{B.Sc.}{University of Massachusetts Boston}
+\masters{M.Eng.}{Cornell University}
+\secondmasters{M.Sc.}{University of Massachusetts Boston}
+\committeechair{Alice XXX, Professor}
+\firstreader{Bob XXX, Professor}
+\secondreader{Tom XXX, Associate Professor}
+\thirdreader{Jerry XXX, Associate Professor}
+\programdirector{Mike XXX}
+\departmentchair{Javen XXX}
+\departmentname{Computer Science Department}
+\departmentprogram{Computer Science Program}
+
+%%
+\degree{Doctor of Philosophy}{Ph.D.}
+%%
+
+%%
+%% These lines produce the title, copyright, and signature pages.
+%% They are Mandatory; except that you could leave out the copyright page
+%% if you were preparing an M.S. thesis instead of a PhD dissertation.
+\frontmatter
+\maketitle
+\copyrightpage     %% not required for an M.S. thesis
+\signaturepage
+
+{\let\bfseries\mdseries% ...or \let\bfseries\relax  unbold all title in abstract/acknow/toc...
+%%
+%% Abstract is MANDATORY. -- Except for MS theses
+\begin{abstract}                % Abstract
+\lipsum[2-4]
+\end{abstract}
+
+%%
+%% Acknowledgements are optional...yeah, right.
+
+\chapter{Acknowledgments}             % Acknowledgements page
+	\input{chapters/acknowledge.tex}
+	
+%%
+%% Dedication is optional -- but this is how you create it
+%\begin{dedication}              % Dedication page
+%  \begin{center}
+%    \emph{To those little lost sheep.}
+%  \end{center}
+%\end{dedication}
+
+%%
+%% Table of contents, List of Tables, List of Figures
+
+\tableofcontents                % Table of contents
+\listoftables                   % List of Tables
+\listoffigures                  % List of Figures
+}
+
+\addtocontents{lot}{Table \hfill Page\par}
+\addtocontents{lof}{Figure \hfill Page\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Time for the body of the dissertation
+\mainmatter   %% <-- This line is mandatory
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Important for UMB thesis style %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% add word Chapter/Table/FIgure and Page on the second page of toc, if has more pages, just repeat following commands. If only one page, comment the corresponding command.
+%\addtocontents{toc}{\protect\afterpage{\textbf{CHAPTER\hfill Page}\par\medskip}}
+%\addtocontents{lot}{\protect\afterpage{\textbf{~\\Table \hfill Page}\par\medskip}}
+%\addtocontents{lof}{\protect\afterpage{\textbf{~\\Figure \hfill Page}\par\medskip}}
+
