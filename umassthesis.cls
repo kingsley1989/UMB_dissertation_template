@@ -14,6 +14,7 @@
 %%  Tony Hosking, 1995, original file and idea
 %%  John Ridgway, 1997, turned into a class file and rewritten
 %%  Kaixun Hua, 2019, Modified to fit UMass Boston Thesis Requirements
+%%  YOng  Zhuang, 2021, Modified to fit UMass Boston Thesis Requirements
 %%
 %%  umthesis.cls,v 1.25 2003/10/16 20:20:51 ridgway Exp
 %%  umthesis.cls,v
@@ -409,10 +410,16 @@
   \fi
   \@dottedtocline{1}{1.0em}{1.5em}{\bfseries #1}{\bfseries #2}
   }
-  
-%\renewcommand{\l@section}[2]{
-%  \@dottedtocline{1}{2.0em}{1.5em}{\bfseries #1}{\bfseries #1}
-%  }
+\renewcommand{\l@section}[1]{
+ \@dottedtocline{1}{2.5em}{2.5em}{\bfseries #1}
+ }
+\renewcommand{\l@subsection}[1]{
+ \@dottedtocline{1}{5.0em}{3em}{\bfseries #1}
+ }
+\renewcommand{\l@subsubsection}[1]{
+ \@dottedtocline{1}{8em}{4em}{\bfseries #1}
+ }
+
 
 \newcommand{\appendicesname}{APPENDICES}
 
