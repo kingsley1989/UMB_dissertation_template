@@ -30,8 +30,8 @@ If you have to add word *Chapter/Table/Figure* and *Page* on the second page of 
 If you have three or more pages of toc, tot or tof, just repeat the above commands, respectively. You don't need to add these commands, if you only have one page.
 
 ## Policies and Forms for Theses and Dissertations of UMASS Boston 
-    - [Standards for the Preparation of Theses and Dissertations at the University of Massachusetts Boston [PDF - last updated November 4, 2019]](https://www.umb.edu/editor_uploads/images/graduate_studies/Revised_Standards_November_19.pdf)
-    - [How to Submit Your Thesis or Dissertation using UMass Boston/ProQuest ETD - A Step-by-Step Guide](https://www.umb.edu/editor_uploads/images/graduate_studies/Step_by_Step_throug5BD377_2016.docx)
+- [Standards for the Preparation of Theses and Dissertations at the University of Massachusetts Boston [PDF - last updated November 4, 2019]](https://www.umb.edu/editor_uploads/images/graduate_studies/Revised_Standards_November_19.pdf)
+- [How to Submit Your Thesis or Dissertation using UMass Boston/ProQuest ETD - A Step-by-Step Guide](https://www.umb.edu/editor_uploads/images/graduate_studies/Step_by_Step_throug5BD377_2016.docx)
 
 ## See also
 
