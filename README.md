@@ -19,7 +19,7 @@ Once installed, you should be able to work with the example files in `example/`:
     bibtex thesis
     pdflatex thesis
 
-## Issue with the talbe of content 
+## Issue with the table of content 
 
 If you have to add word *Chapter/Table/Figure* and *Page* on the second page of toc, tot or tof, add the following code to the end of `example/chapters/headpages.tex`
 
